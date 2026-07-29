@@ -1,0 +1,79 @@
+# ==========================
+# Python
+# ==========================
+
+# Byte-compiled / cache
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Compiled extensions
+*.so
+
+# Virtual Environment
+backend/venv/
+venv/
+.env
+
+# Environment Variables
+backend/.env
+
+# SQLite Database
+backend/db.sqlite3
+
+# Logs
+*.log
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Type checkers
+.mypy_cache/
+.pyre/
+.pytype/
+
+# ==========================
+# Django
+# ==========================
+
+# Collected static files
+backend/staticfiles/
+
+# Media uploads (optional)
+backend/media/
+
+# ==========================
+# Node / React / Vite
+# ==========================
+
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+
+# npm/yarn logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ==========================
+# IDEs
+# ==========================
+
+.vscode/
+.idea/
+
+# ==========================
+# Operating System
+# ==========================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==========================
+# Git
+# ==========================
+
+*.orig
