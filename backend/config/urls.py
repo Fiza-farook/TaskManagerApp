@@ -42,4 +42,7 @@ urlpatterns = [
 
     # Chat API
     path("api/chat/", include("chat.urls")),
+
+    # Dashboard API
+    path("api/dashboard/", include("dashboard.urls")),
 ]

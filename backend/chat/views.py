@@ -1,13 +1,17 @@
+from django.http import FileResponse
+
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .models import ChatHistory
+from .pdf_utils import generate_chat_history_pdf
 from .serializers import (
     ChatHistorySerializer,
     ChatRequestSerializer,
 )
+from .services import process_chat_message
 
 
 class ChatAPIView(APIView):
@@ -19,17 +23,9 @@ class ChatAPIView(APIView):
         if serializer.is_valid():
             message = serializer.validated_data["message"]
 
-            # Temporary AI response
-            ai_response = (
-                f"You said: '{message}'. "
-                "This is a sample AI response. "
-                "The real AI integration will be added in the next step."
-            )
-
-            chat = ChatHistory.objects.create(
-                user=request.user,
-                question=message,
-                response=ai_response,
+            chat = process_chat_message(
+                request.user,
+                message,
             )
 
             return Response(
@@ -47,9 +43,10 @@ class ChatHistoryAPIView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        chats = ChatHistory.objects.filter(
-            user=request.user
-        ).order_by("-created_at")
+        chats = (
+            ChatHistory.objects.filter(user=request.user)
+            .order_by("-created_at")
+        )
 
         serializer = ChatHistorySerializer(
             chats,
@@ -73,4 +70,25 @@ class ClearChatHistoryAPIView(APIView):
             },
             status=status.HTTP_200_OK,
         )
-   
+
+
+class DownloadChatHistoryPDFAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        chats = (
+            ChatHistory.objects.filter(user=request.user)
+            .order_by("-created_at")
+        )
+
+        pdf = generate_chat_history_pdf(
+            request.user,
+            chats,
+        )
+
+        return FileResponse(
+            pdf,
+            as_attachment=True,
+            filename="chat_history.pdf",
+            content_type="application/pdf",
+        )
