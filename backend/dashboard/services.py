@@ -4,6 +4,7 @@ from django.db.models import Count
 
 from projects.models import Project
 from tasks.models import Task
+from django.contrib.auth.models import User
 
 
 def get_dashboard_statistics():
@@ -161,3 +162,25 @@ def get_recent_activity(limit=10):
         })
 
     return activity
+
+def get_workload_distribution():
+    """
+    Returns number of tasks assigned to each user.
+    """
+
+    workload = []
+
+    users = User.objects.all()
+
+    for user in users:
+
+        task_count = Task.objects.filter(
+            assigned_to=user
+        ).count()
+
+        workload.append({
+            "username": user.username,
+            "task_count": task_count,
+        })
+
+    return workload

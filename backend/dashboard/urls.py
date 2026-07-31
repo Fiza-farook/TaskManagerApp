@@ -5,6 +5,7 @@ from .views import (
     TaskStatusAPIView,
     ProjectSummaryAPIView,
     RecentActivityAPIView,
+    WorkloadDistributionAPIView,
 )
 
 urlpatterns = [
@@ -28,4 +29,9 @@ urlpatterns = [
         RecentActivityAPIView.as_view(),
         name="recent-activity",
     ),
+    path(
+    "workload/",
+    WorkloadDistributionAPIView.as_view(),
+    name="workload-distribution",
+),
 ]

@@ -1,0 +1,188 @@
+/* ===========================
+   LIGHT THEME
+=========================== */
+
+body[data-theme="light"] {
+    background: #f5f7fb;
+    color: #212529;
+    transition: all 0.3s ease;
+}
+
+/* ===========================
+   DARK THEME
+=========================== */
+
+body[data-theme="dark"] {
+    background: #121826;
+    color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+body[data-theme="dark"] .navbar {
+    background: #1c2333 !important;
+    color: white !important;
+    border-bottom: 1px solid #2b3348;
+}
+
+body[data-theme="dark"] .navbar h4,
+body[data-theme="dark"] .navbar span {
+    color: white !important;
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+
+body[data-theme="dark"] .bg-dark {
+    background: #181f2e !important;
+}
+
+body[data-theme="dark"] .bg-dark a,
+body[data-theme="dark"] .bg-dark .nav-link {
+    color: #d8dbe3 !important;
+}
+
+body[data-theme="dark"] .bg-dark .nav-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+}
+
+body[data-theme="dark"] .bg-dark .active {
+    background: #6f42c1 !important;
+    color: white !important;
+    border-radius: 8px;
+}
+
+/* ===========================
+   CARDS
+=========================== */
+
+body[data-theme="dark"] .card {
+    background: #1c2333;
+    color: white;
+    border: 1px solid #2c3448;
+}
+
+body[data-theme="dark"] .card-header {
+    background: #20283b !important;
+    color: white;
+    border-bottom: 1px solid #2c3448;
+}
+
+/* ===========================
+   TABLES
+=========================== */
+
+body[data-theme="dark"] .table {
+    color: white;
+}
+
+body[data-theme="dark"] .table thead {
+    background: #20283b;
+}
+
+body[data-theme="dark"] .table td,
+body[data-theme="dark"] .table th {
+    border-color: #30384d;
+}
+
+/* ===========================
+   FORMS
+=========================== */
+
+body[data-theme="dark"] .form-control,
+body[data-theme="dark"] .form-select,
+body[data-theme="dark"] textarea {
+    background: #252d40;
+    color: white;
+    border: 1px solid #3b455d;
+}
+
+body[data-theme="dark"] .form-control:focus,
+body[data-theme="dark"] .form-select:focus {
+    background: #252d40;
+    color: white;
+    border-color: #6f42c1;
+    box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, .25);
+}
+
+body[data-theme="dark"] .form-control::placeholder {
+    color: #b8bfd1;
+}
+
+/* ===========================
+   MODALS
+=========================== */
+
+body[data-theme="dark"] .modal-content {
+    background: #1c2333;
+    color: white;
+}
+
+body[data-theme="dark"] .modal-header,
+body[data-theme="dark"] .modal-footer {
+    border-color: #313a50;
+}
+
+/* ===========================
+   CHAT
+=========================== */
+
+body[data-theme="dark"] .chat-page {
+    background: transparent;
+}
+
+body[data-theme="dark"] .chat-bubble-user {
+    background: #6f42c1;
+}
+
+body[data-theme="dark"] .chat-bubble-ai {
+    background: #2a3248;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+body[data-theme="dark"] .btn-outline-primary {
+    color: white;
+    border-color: #7b61ff;
+}
+
+body[data-theme="dark"] .btn-outline-primary:hover {
+    background: #7b61ff;
+    color: white;
+}
+
+/* ===========================
+   LINKS
+=========================== */
+
+body[data-theme="dark"] a {
+    color: #9d8dff;
+}
+
+body[data-theme="dark"] a:hover {
+    color: #c3b8ff;
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+body[data-theme="dark"]::-webkit-scrollbar {
+    width: 10px;
+}
+
+body[data-theme="dark"]::-webkit-scrollbar-track {
+    background: #181f2e;
+}
+
+body[data-theme="dark"]::-webkit-scrollbar-thumb {
+    background: #5b3fb5;
+    border-radius: 10px;
+}

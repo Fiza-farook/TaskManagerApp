@@ -3,6 +3,12 @@ const ENDPOINTS = {
     LOGIN: "/token/",
     REFRESH: "/token/refresh/",
 
+    // Accounts
+    REGISTER: "/accounts/register/",
+    PROFILE: "/accounts/profile/",
+    CHANGE_PASSWORD: "/accounts/change-password/",
+    USERS: "/accounts/users/",
+
     // Projects
     PROJECTS: "/projects/",
 

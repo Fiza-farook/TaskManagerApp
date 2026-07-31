@@ -7,6 +7,7 @@ from .services import (
     get_task_status_distribution,
     get_project_summary,
     get_recent_activity,
+    get_workload_distribution,
 )
 
 
@@ -40,3 +41,10 @@ class RecentActivityAPIView(APIView):
     def get(self, request):
         data = get_recent_activity()
         return Response(data)
+
+class WorkloadDistributionAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        data = get_workload_distribution()
+        return Response(data)   

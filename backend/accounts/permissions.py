@@ -1,18 +1,16 @@
-from rest_framework import generics
-from rest_framework.permissions import IsAuthenticated
-from accounts.permissions import IsAdmin
-
-from .models import Project
-from .serializers import ProjectSerializer
+from rest_framework.permissions import BasePermission
 
 
-class ProjectListView(generics.ListCreateAPIView):
-    queryset = Project.objects.all()
-    serializer_class = ProjectSerializer
-    permission_classes = [IsAuthenticated, IsAdmin]
+class IsAdminOnly(BasePermission):
+    """
+    Allows access only to Admin users.
+    """
 
+    message = "Only Admin users can perform this action."
 
-class ProjectDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Project.objects.all()
-    serializer_class = ProjectSerializer
-    permission_classes = [IsAuthenticated, IsAdmin]
+    def has_permission(self, request, view):
+        return (
+            request.user.is_authenticated
+            and hasattr(request.user, "profile")
+            and request.user.profile.role == "Admin"
+        )

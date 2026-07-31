@@ -1,0 +1,240 @@
+/* ==========================================
+   CHAT PAGE
+========================================== */
+
+.chat-page {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 80px);
+}
+
+.chat-body {
+    flex: 1;
+    overflow: hidden;
+}
+
+.chat-body .card-body {
+    height: 68vh;
+    overflow-y: auto;
+    padding: 24px;
+    background: var(--bs-body-bg, #f8f9fa);
+}
+
+/* ==========================================
+   CHAT BUBBLES
+========================================== */
+
+.chat-bubble {
+    max-width: 78%;
+    padding: 16px 18px;
+    border-radius: 18px;
+    word-break: break-word;
+    white-space: pre-wrap;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+    transition: .2s ease;
+}
+
+.chat-bubble:hover {
+    transform: translateY(-2px);
+}
+
+.chat-bubble.user {
+    background: linear-gradient(135deg, #6C63FF, #3B82F6);
+    color: #ffffff;
+    border-bottom-right-radius: 6px;
+}
+
+.chat-bubble.bot {
+    background: var(--bs-card-bg, #ffffff);
+    color: var(--bs-body-color, #212529);
+    border: 1px solid rgba(0, 0, 0, .08);
+    border-bottom-left-radius: 6px;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: inherit;
+}
+
+.chat-time {
+    margin-top: 10px;
+    font-size: .75rem;
+    opacity: .7;
+    text-align: right;
+}
+
+/* ==========================================
+   EMPTY CHAT
+========================================== */
+
+.empty-chat {
+    text-align: center;
+    color: var(--bs-body-color, #212529);
+}
+
+.chat-empty-icon {
+    width: 90px;
+    height: 90px;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6C63FF, #3B82F6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 42px;
+}
+
+.empty-chat h2,
+.empty-chat h3,
+.empty-chat h4,
+.empty-chat p,
+.empty-chat span {
+    color: var(--bs-body-color, #212529);
+}
+
+/* ==========================================
+   SUGGESTION CARDS
+========================================== */
+
+.suggestion-card {
+    background: var(--bs-card-bg, #fff);
+    color: var(--bs-body-color, #212529);
+    border: 1px solid rgba(108, 99, 255, .18);
+    border-radius: 12px;
+    padding: 18px;
+    cursor: pointer;
+    transition: .25s;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.suggestion-card:hover {
+    transform: translateY(-3px);
+    border-color: #6C63FF;
+    box-shadow: 0 10px 25px rgba(108, 99, 255, .18);
+}
+
+/* ==========================================
+   INPUT
+========================================== */
+
+.chat-input {
+    margin-top: 18px;
+}
+
+textarea.form-control {
+    resize: none;
+    min-height: 60px;
+    border-radius: 12px;
+    background: var(--bs-card-bg, #ffffff);
+    color: var(--bs-body-color, #212529);
+}
+
+textarea.form-control::placeholder {
+    color: #6c757d;
+}
+
+textarea.form-control:focus {
+    border-color: #6C63FF;
+    box-shadow: 0 0 0 .15rem rgba(108, 99, 255, .18);
+}
+
+.chat-input .btn {
+    min-width: 140px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #6C63FF, #3B82F6);
+    border: none;
+}
+
+.chat-input .btn:hover {
+    filter: brightness(.95);
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+.chat-body .card-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-body .card-body::-webkit-scrollbar-thumb {
+    background: #b7b7b7;
+    border-radius: 20px;
+}
+
+.chat-body .card-body::-webkit-scrollbar-thumb:hover {
+    background: #8f8f8f;
+}
+
+/* ==========================================
+   DARK MODE SUPPORT
+========================================== */
+
+[data-theme="dark"] .chat-body .card-body {
+    background: #1b2235;
+}
+
+[data-theme="dark"] .chat-bubble.bot {
+    background: #27304a;
+    color: #f5f5f5;
+    border-color: rgba(255, 255, 255, .08);
+}
+
+[data-theme="dark"] .empty-chat,
+[data-theme="dark"] .empty-chat h2,
+[data-theme="dark"] .empty-chat h3,
+[data-theme="dark"] .empty-chat h4,
+[data-theme="dark"] .empty-chat p,
+[data-theme="dark"] .empty-chat span {
+    color: #f5f5f5;
+}
+
+[data-theme="dark"] .suggestion-card {
+    background: #27304a;
+    color: #f5f5f5;
+    border-color: rgba(255, 255, 255, .08);
+}
+
+[data-theme="dark"] textarea.form-control {
+    background: #27304a;
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, .08);
+}
+
+[data-theme="dark"] textarea.form-control::placeholder {
+    color: #bdbdbd;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:768px) {
+
+    .chat-page {
+        height: auto;
+    }
+
+    .chat-body .card-body {
+        height: 70vh;
+        overflow-y: auto;
+        padding: 40px;
+    }
+
+    .chat-bubble {
+        max-width: 95%;
+    }
+
+    .chat-input .btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+}

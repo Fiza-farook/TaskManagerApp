@@ -1,11 +1,35 @@
-import api from "../api/api";
+import api from "../api/axios";
 
-export const getProjects = () => api.get("/projects/");
+const projectService = {
+    // Get all projects
+    getProjects: async () => {
+        const response = await api.get("/projects/");
+        return response.data;
+    },
 
-export const createProject = (data) => api.post("/projects/", data);
+    // Get single project
+    getProject: async (id) => {
+        const response = await api.get(`/projects/${id}/`);
+        return response.data;
+    },
 
-export const updateProject = (id, data) =>
-    api.put(`/projects/${id}/`, data);
+    // Create project
+    createProject: async (projectData) => {
+        const response = await api.post("/projects/", projectData);
+        return response.data;
+    },
 
-export const deleteProject = (id) =>
-    api.delete(`/projects/${id}/`);
+    // Update project
+    updateProject: async (id, projectData) => {
+        const response = await api.put(`/projects/${id}/`, projectData);
+        return response.data;
+    },
+
+    // Delete project
+    deleteProject: async (id) => {
+        const response = await api.delete(`/projects/${id}/`);
+        return response.data;
+    },
+};
+
+export default projectService;

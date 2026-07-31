@@ -1,0 +1,80 @@
+body {
+    background: linear-gradient(135deg, #6f42c1, #0d6efd);
+    min-height: 100vh;
+}
+
+.login-container {
+    min-height: 100vh;
+}
+
+.login-card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.login-title {
+    color: #6f42c1;
+    font-weight: bold;
+}
+
+.btn-login {
+    background: #6f42c1;
+    border: none;
+    transition: .3s;
+}
+
+.btn-login:hover {
+    background: #5936a2;
+}
+
+.logo-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #6f42c1;
+    color: white;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+.card {
+    border-radius: 20px;
+}
+
+.login-footer-text {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.login-register-link {
+    color: #6C63FF;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-register-link:hover {
+    color: #3B82F6;
+    text-decoration: underline;
+}
+
+/* Dark Theme */
+
+[data-theme="dark"] .login-footer-text {
+    color: #d1d5db;
+}
+
+[data-theme="dark"] .login-register-link {
+    color: #8B5CF6;
+}
+
+[data-theme="dark"] .login-register-link:hover {
+    color: #60A5FA;
+}

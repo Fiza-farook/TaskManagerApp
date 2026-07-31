@@ -1,0 +1,67 @@
+:root {
+
+    /* ===== Brand Colors ===== */
+
+    --primary-color: #6C63FF;
+    --secondary-color: #2563EB;
+
+    --sidebar-color: #1E1E2F;
+
+    --background-color: #F8FAFC;
+
+    --card-color: #FFFFFF;
+
+    --text-color: #1F2937;
+
+    --border-color: #E5E7EB;
+
+    --success-color: #22C55E;
+
+    --warning-color: #F59E0B;
+
+    --danger-color: #EF4444;
+
+    --info-color: #0EA5E9;
+
+
+
+    /* ===== Border Radius ===== */
+
+    --radius-sm: 8px;
+
+    --radius-md: 12px;
+
+    --radius-lg: 16px;
+
+    --radius-xl: 20px;
+
+
+
+    /* ===== Shadows ===== */
+
+    --shadow-sm:
+        0 2px 8px rgba(0, 0, 0, .05);
+
+    --shadow-md:
+        0 8px 20px rgba(0, 0, 0, .08);
+
+    --shadow-lg:
+        0 12px 32px rgba(0, 0, 0, .12);
+
+
+
+    /* ===== Gradient ===== */
+
+    --primary-gradient:
+        linear-gradient(90deg,
+            #6C63FF,
+            #2563EB);
+
+
+
+    /* ===== Animation ===== */
+
+    --transition:
+        all .30s ease;
+
+}
